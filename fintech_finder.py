@@ -44,7 +44,7 @@ st.markdown("## Hire A Fintech Professional")
 st.text(" \n")
 
 # Streamlit Sidebar Code - Start
-st.sidebar.markdown("## Client Account Address and Ethernet Balance in Ether")
+st.sidebar.markdown("## Client Account Address and Ethereum Balance")
 
 # Call the `generate_account` function and save it as the variable `account`
 account = generate_account()
@@ -62,34 +62,34 @@ person = st.sidebar.selectbox('Select a Person', people)
 # Create a input field to record the number of hours the candidate worked
 hours = st.sidebar.number_input("Number of Hours")
 
-st.sidebar.markdown("## Candidate Name, Hourly Rate, and Ethereum Address")
+st.sidebar.markdown("----")
+st.sidebar.markdown("## Selected Candidate")
 
 # Identify the FinTech Hire candidate
 candidate = candidate_database[person][0]
 
 # Write the Fintech Finder candidate's name to the sidebar
-st.sidebar.write(candidate)
+st.sidebar.write("NAME: ", candidate)
 
 # Identify the FinTech Finder candidate's hourly rate
 hourly_rate = candidate_database[person][3]
 
 # Write the FinTech Finder candidate's hourly rate to the sidebar
-st.sidebar.write(hourly_rate)
+st.sidebar.write("HOURLY RATE: ", hourly_rate)
 
 # Identify the FinTech Finder candidate's Ethereum Address
 candidate_address = candidate_database[person][1]
 
 # Write the FinTech Finder candidate's Ethereum Address to the sidebar
+st.sidebar.markdown("ETHEREUM ACCOUNT ADDRESS")
 st.sidebar.write(candidate_address)
-
-st.sidebar.markdown("## Total Wage in Ether")
 
 # Total `wage` for the candidate by multiplying the candidate’s hourly
 # rate from the candidate database by the value of the `hours` variable
 wage = hourly_rate * hours
 
 # Write the `wage` calculation to the Streamlit sidebar
-st.sidebar.write(wage)
+st.sidebar.write("TOTAL WAGE (ETH): ", wage)
 
 if st.sidebar.button("Send Transaction"):
     # Call the `send_transaction` function and pass it 3 parameters:
