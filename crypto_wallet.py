@@ -11,6 +11,7 @@ from dotenv import load_dotenv
 load_dotenv()
 from bip44 import Wallet
 from web3 import Account
+from web3 import Web3
 from web3 import middleware
 from web3.gas_strategies.time_based import medium_gas_price_strategy
 
@@ -36,7 +37,7 @@ def generate_account():
 def get_balance(w3, address):
     """Using an Ethereum account address access the balance of Ether"""
     # Get balance of address in Wei
-    wei_balance = w3.eth.get_balance(address)
+    wei_balance = w3.eth.getBalance(address)
 
     # Convert Wei value to ether
     ether = w3.fromWei(wei_balance, "ether")
