@@ -52,7 +52,7 @@ To get started, run the app by typing `streamlit run fintech_finder.py` from the
 
 Once opened in your browser you will see the app as displayed.
 
-![fintech_finder_UI](./Images/FintechFinder_Streamlit_UI.png)
+![fintech_finder_UI](./Images/fintechFinder_Streamlit_UI.png)
 
 ### *INPUT*
 
